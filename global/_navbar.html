@@ -1,0 +1,109 @@
+{% block nav %}
+<ul class='navbar '>
+	<div class='flex-row nav-left'>
+	<a class="nav-item flex-center"  href="{% url 'index' %}">
+		<li class="">
+			
+				{% block nav-home %}
+					Home
+				{% endblock %}
+
+		</li>
+	</a>
+	<a class="nav-item flex-center" id='nav-store'  href="{% url 'catalog' %}">
+		<li class='' >		
+			{% block nav-catalog %}
+				Store
+			{% endblock %}
+			<ul class='flex-column'>
+				<li class="nav-item">
+					{% block nav-complete %}
+						Complete Swords
+					{% endblock %}
+				</li>
+				<li class="nav-item">
+					{% block nav-blades %}
+						Blades
+					{% endblock %}
+				</li>
+				<li class="nav-item">
+					{% block nav-crossguards %}
+						Crossguards
+					{% endblock %}
+				</li>
+				<li class="nav-item">
+					{% block nav-grips %}
+						Grips
+					{% endblock %}
+				</li>
+				<li class="nav-item">
+					{% block nav-pommels %}
+						Pommels
+					{% endblock %}
+				</li>
+				
+			</ul>
+		</li>
+	</a>
+	<a class="nav-item flex-center" href="{% url 'swordbuilder' %}">
+		<li class="">
+				{% block nav-swordbuilder %}
+					SwordBuilder
+				{% endblock %}
+		</li>
+	</a>
+	</div>
+	<div class='flex-row-reverse nav-right'>
+	<a class="nav-item flex-reverse clickable" onclick='loginclick()'>
+		<li class="">
+			{% block login %}
+				Login
+			{% endblock %}
+		</li>
+	</a>
+	<a class="nav-item flex-reverse clickable" onclick='signupclick()'>
+		<li class="">
+			{% block signup %}
+				Sign Up
+			{% endblock %}
+		</li>
+	</a>
+	</div>
+</ul>
+<div id='Fadeout' class='hide' onclick='getToggle()'></div>
+<div id='Login' class='hide'>
+{% include '_login.html' %}
+</div>
+<div id='Signup' class='hide'>
+{% include '_signup.html' %}
+</div>
+</div>
+<script>
+	var login = document.getElementById('Login')
+	var signup = document.getElementById('Signup')
+	var fadeout = document.getElementById('Fadeout')
+	var loginopen = false;
+	var signupopen = false;
+function getToggle(){
+
+	if (loginopen){
+		toggle(login,'hide')
+		loginopen = false;
+		} else if(signupopen) {
+		signupopen = false;
+		toggle(signup, 'hide')
+}
+	toggle(fadeout, 'hide')
+}
+function signupclick(){
+	signupopen = true;
+	toggle(signup, 'hide')
+	toggle(fadeout, 'hide')
+}
+function loginclick(){
+	loginopen = true;
+	toggle(login, 'hide')
+	toggle(fadeout, 'hide')
+}
+</script>
+{% endblock %}

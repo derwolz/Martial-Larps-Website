@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	{% load static %}
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>ThreeJS Starter</title>
+		<link rel="stylesheet" href="{% static 'css/SwordBuilder.css' %}">
+		<link rel='stylesheet' href="{% static 'css/site.css'%}">
+	</head>
+
+	<body class='background'>
+	 {% include '_navbar.html' %}
+		<div id='Viewport' class='container '>
+			<canvas class="webgl"></canvas>
+		</div>
+		<div id='Sidebar' class='flex-col marble'>
+			<div id='Map' class='baritem'>
+			</div>
+			<div id='Menu' class='baritem flex-row'>
+				
+				<!-- <div example > -->
+				<div class='recitem'>
+				</div>
+				<div class='recitem'>
+				</div>
+				<div class='recitem'>
+				</div>
+				<!-- </div> -->
+				
+			</div>
+			<div id="vCart"></div>
+			<div id='Char' class='baritem flex-col'>
+			<div id='Blade' class='selectable'></div>
+			<div id='Cross' class='selectable'></div>
+			<div id='Handle' class='selectable'></div>
+			<div id='Pommel' class='selectable'></div>
+			
+			</div>
+		</div>
+		
+		<div id='Foot' class='flex-row bg-marble'>
+			{% for i in '0123'|make_list %}
+			<div class='recitem part-preview'>
+				<img id='part{{i}}' src=''>
+			</div>
+			{% endfor %}
+		</div>
+		 
+		<!-- <script type="module" src=""></script> -->
+		 <script type='module'  src="{% static 'js/swordbuilder.js' %}"></script> 
+		 <script src='{% static "js/site.js"%}'></script>
+	</body>
+</html>

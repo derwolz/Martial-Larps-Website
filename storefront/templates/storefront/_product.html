@@ -1,0 +1,26 @@
+{% block productcard %}
+
+<div class='card flex-item flex-col '>
+	<a href="{% url 'product' id=product.id %}">
+		<img class='card-img flex-center' src='{{ product.imageURL }}' alt='{{product}}'>
+		<h3>{{product}}</h3>
+		<ul>
+			
+			<li class=''><h4>{{product.price}}</h4></li>
+			<li class=''><h5>
+			{% if product.aggregateReviews == -1 %}
+				No Reviews Yet
+			{% else %}
+			{{product.aggregateReviews}}
+			{% endif %}
+			</h5></li>
+			<li class=''>{{product.description}}</li>
+		</ul>
+	</a>
+	<div class='flex-row flex-center'>
+		<button class='mx-2 my-1'>Add To Cart</button>
+		<button class='mx-2 my-1'> Buy Now </button>
+	</div>
+</div>
+
+{% endblock %}

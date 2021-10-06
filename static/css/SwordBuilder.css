@@ -1,0 +1,139 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    font-family: 'Poppins';
+	
+}
+body {
+	overflow-x: hidden;
+}
+.background {
+	background-color: #333333;
+}
+.webgl
+{
+    position: absolute;
+    outline: none;
+	/*mix-blend-mode: exclusion;*/
+}
+
+h1 {
+	font-size: 8rem;
+	text-transform: uppercase;
+	color: #ffffff;
+}
+
+#Foot {
+	height: 25vh;
+	width: 70vw
+}
+
+#Sidebar {
+	float: right;
+	height: 93vh;
+	width: 29vw;
+	
+}
+.flex-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+.flex-col {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap
+}
+.flex-center {
+	flex-center: 
+}
+#Viewport {
+	float: left;
+	height: 68vh;
+	width: 70vw;
+}
+.recitem{
+	border-radius: 1em;
+	border-color: black;
+	border-style: solid;
+	height: 98%;
+	flex-grow: 2;
+	flex-basis: |auto;
+	width: 24%;
+	align-self: center;
+	overflow: hidden;
+}
+.recitem img{
+	
+	height: 100%;
+}
+
+.baritem {
+	height: 100%;
+}
+
+#Map {
+	border-radius: 1em;
+	border-color: black;
+	border-style: solid;
+	height: 25vh;
+}
+#Menu {
+	border-radius: 1em;
+	border-color: black;
+	border-style: solid;
+	height: 20vh;
+}
+#Char {
+	height: 50vh;
+	border-radius: 1em;
+	border-color: black;
+	border-style: solid;
+}
+.nav {
+	height: 3em;
+	background-color: #000010;
+	width: 100vw;
+	z-index: 1;
+}
+.container {
+	overflow: hidden;
+}
+#Blade{
+	align-self: center;
+	padding-top: 4em;
+	height: 9em;
+	width: 3em;
+	background-color: blue;
+}
+#Cross{
+	align-self: center;
+	height: 3em;
+	width: 6em;
+	background-color: green;
+}
+#Handle{
+	align-self: center;
+	height: 5em;
+	width: 3em;
+	background-color: red;
+}
+#Pommel{
+	align-self: center;
+	background-color: yellow;
+	width: 3.4em;
+	height: 3.4em;
+	
+}
+
+.bg-marble { 
+	background-color: grey;
+	background-image: '/static/img/marble.jpg';
+	background-position: 0;
+}

@@ -1,0 +1,11 @@
+{% block loginform %}
+	<div class='float-form card'>
+		<form method="POST">
+			{% csrf_token %}
+			{{ login_form.as_p }}
+			<br>
+		<p> Get All the greatest news about martial larps and instant notification when we go live.</p>
+		<input type='submit'>
+		</form>
+	</div>
+{% endblock %}

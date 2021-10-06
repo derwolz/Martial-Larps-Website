@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name='viewport' content="width=device-width, initial-scale=1.0">
+		{% load static %}
+		<link rel='stylesheet' href="{% static 'css/site.css' %}">
+	</head>
+	<body>
+		{% include '_navbar.html'%}
+		<div class='container'>
+			<div class='imgbox'>
+				<div class='thumb-box flex-col'>
+					{% for image in product.getImages %}
+						<img class='thumbnail' src='{{image.imageURL}}' alt='{{image.name}}' onclick='imgSelect({{image}})'>
+					{% endfor %}
+				</div>
+				<div class='display-box'>
+					<img class='display-img' src='{{product.image.imageURL}}' alt='{{Product}}' onmouseover='zoom()'>
+				</div>
+			</div>
+			<div>
+				<h1>{{product}}</h1>
+				<h2>{{product.price}}</h2>
+				<h3>{{product.description}}</h3>
+			</div>
+			<div class='review-box'>
+				<div class='review-title'>
+				<h2>Reviews</h2>
+				</div>
+				<div class='review-content'>
+					{% for rev in reviews %}
+						<div class='review'>
+							<h3>{{rev.customer.name}}</h3>
+							{{rev.rating}}<br>
+							{{rev.review}}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class='sidebar-right'>
+				{{product.price}}		
+				<button>Add to cart</button>
+				<button>Buy Now</button>
+			</div>
+		</div>
+	</body>
+</html>

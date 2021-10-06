@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static '/css/site.css'%}">
+</head>
+<body >
+{% include '_navbar.html' %}
+<div class='landing-background stone'></div>
+<div id='Web-BG' class=''>
+	<canvas  class='webgl'></canvas>
+</div>
+
+<div id='Landing' class='h-landing landing'>
+
+	<h1> Be Your Own Smith </h1>
+</div>
+<div id='About' class='h-landing landing'>
+	<h2> How it works </h2>
+</div>
+<div id='Invite' class='h-landing landing'>
+	<h2> Start Smithing Now!</h2>
+	<div class='flex-row flex-center'>
+		<div class="container">
+			<div class='flex-item flex-center' onclick="redirect('shop')">
+				<div class="card">
+					<img src="{% static 'img/marble'%}" alt='shopicon'> 
+					<hr>
+					<h3> shop-now </h3>
+				</div>
+			</div>
+			<div class='flex-item flex-center' onclick="redirect('swordbuilder')">
+				<div class="card">
+					<img src="{%static 'img/marble'%}" alt='buildicon'>
+					<h3> Start building </h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id='Testimonials' class='hide h-landing landing'>
+	<h2>On the Battlefield</h2>
+	<div id='getsocialapi'></div>
+</div>
+
+
+<script type='module' src="{%static 'js/landing.js'%}">
+</script>
+<script src='{% static "js/site.js"%}'></script>
+<script>
+var sword = [
+	'{% static "/meshes/blades/blade.glb" %}',
+	'{% static "/meshes/crossguards/cross.glb" %}',
+	'{% static "/meshes/grips/handle.glb" %}',
+	'{% static "/meshes/pommels/pommel.glb"%}'
+]
+
+</script>
+</body>
+</html>

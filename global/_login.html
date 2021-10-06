@@ -1,0 +1,11 @@
+{% block loginform %}
+	<div class='float-form card'>
+		<form method="GET">
+			{% csrf_token %}
+			{{ login_form.as_p }}
+		<br>
+		Welcome Back!
+		<input type='submit'>
+		</form>
+	</div>
+{% endblock %}
